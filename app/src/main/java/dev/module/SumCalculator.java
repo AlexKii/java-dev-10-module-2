@@ -3,6 +3,8 @@
  */
 package dev.module;
 
+import java.math.BigInteger;
+
 public class SumCalculator {
     public int sum(int n) {
 
@@ -14,7 +16,7 @@ public class SumCalculator {
 
     private boolean checkVarIsCorrect(int n) {
 
-        if(n * (n + 1l) / 2l <= 2147483647 && n > 0) return true;
+        if(n * (n + 1l) / 2l <= Integer.MAX_VALUE && n > 0) return true;
         return false;
     }
 }

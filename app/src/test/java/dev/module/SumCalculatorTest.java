@@ -20,16 +20,26 @@ class SumCalculatorTest {
     public void testThatSumCalculatorWorksCorrect() {
 
         Assertions.assertDoesNotThrow(() -> {
-            for(int n = 1; n < 65536; n++) {
+            for (int n = 1; n < 65536; n++) {
                 sumCalculator.sum(n);
             }
         });
+    }
+    @Test
+    public void testThatIllegalArgumentExceptionThrownForZeroValue() {
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> sumCalculator.sum(0));
+    }
+
+    @Test
+    public void testThatIllegalArgumentExceptionThrownForNegativeValue() {
+
         Assertions.assertThrows(IllegalArgumentException.class, () -> sumCalculator.sum(-4));
+    }
+    @Test
+    public void testThatIllegalArgumentExceptionThrownForTooBigValue() {
+
         Assertions.assertThrows(IllegalArgumentException.class, () -> sumCalculator.sum(65536));
-
-
     }
 }
 
